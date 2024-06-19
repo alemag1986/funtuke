@@ -1,0 +1,15 @@
+name: DotNetBuild
+on: push
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+  
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+      # You can test your matrix by printing the current dotnet version
+    - run: dotnet build 
